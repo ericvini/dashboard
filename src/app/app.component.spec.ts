@@ -1,9 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DashboardModule } from './dashboard';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    declarations: [AppComponent],imports:[
+      DashboardModule
+    ]
   }));
 
   it('should create the app', () => {
@@ -18,10 +21,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('dashboard');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('dashboard app is running!');
-  });
 });
